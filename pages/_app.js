@@ -32,9 +32,14 @@ function MyApp({ Component, pageProps }) {
           <span className="mr-6 cursor-pointer">Home</span>
         </Link>
         {user && (
-          <Link href="/create-post" passHref>
-            <span className="mr-6 cursor-pointer">Create Post</span>
-          </Link>
+          <>
+            <Link href="/my-posts" passHref>
+              <span className="mr-6 cursor-pointer">My Posts</span>
+            </Link>
+            <Link href="/create-post" passHref>
+              <span className="mr-6 cursor-pointer">Create Post</span>
+            </Link>
+          </>
         )}
         <Link href="/profile" passHref>
           <span className="mr-6 cursor-pointer">Profile</span>

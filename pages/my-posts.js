@@ -32,16 +32,14 @@ export default function MyPosts() {
           <h2 className="text-xl font-semibold">{post.title}</h2>
           <p className="text-gray-500 mt-2 mb-2">Author: {post.user_email}</p>
           <Link href={`/edit-post/${post.id}`}>
-            <a className="text-sm mr-4 text-blue-500">
-              View
-              <button
-                className="text-sm mr-4 text-red-500"
-                onClick={() => deletePost(post.id)}
-              >
-                Delete Post
-              </button>
-            </a>
+            <a className="text-sm mr-4 text-blue-500">View</a>
           </Link>
+          <button
+            className="text-sm mr-4 text-red-500"
+            onClick={() => deletePost(post.id)}
+          >
+            Delete Post
+          </button>
         </div>
       ))}
     </div>
