@@ -1,4 +1,5 @@
-import { Auth, Typography, Button } from "@supabase/supabase-js";
+import { Button } from "@supabase/supabase-js";
+import { Auth, Typography } from "@supabase/ui";
 const { Text } = Typography;
 import { supabase } from "../api";
 
