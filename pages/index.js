@@ -5,8 +5,14 @@ import { supabase } from "../api";
 export default function Home() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     fetchPosts();
+    const mySubscription = supabase
+      .from("posts")
+      .on("*", () => fetchPosts())
+      .subscribe();
+    return () => supabase.removeSubscription(mySubscription);
   }, []);
 
   async function fetchPosts() {
